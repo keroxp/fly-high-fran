@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - FloorCatcher
+  - StartUI
+  - PlayingUI
+  - PlayableArea
+  - ResultUI
   layers:
   - Default
   - TransparentFX
@@ -13,10 +19,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - 2D
+  - 3D
+  - foo
+  - bar
   - 
   - 
   - 
@@ -38,6 +44,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3312167307
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 485765911
+    locked: 0
+  - name: Front
+    uniqueID: 1592335531
     locked: 0
