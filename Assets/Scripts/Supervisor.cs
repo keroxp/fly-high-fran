@@ -90,9 +90,7 @@ public class Supervisor : MonoBehaviour, FluxComponent {
 		}
 	}
 	private void updateInResult() {
-		if (Inputs.OnUp(0) || Input.GetKeyUp(KeyCode.Space)) {
-			SceneManager.LoadScene("Main");
-		}
+
 	}
 	private string makeScoreText(float score) {		
 		var text = ""+score;
@@ -137,6 +135,15 @@ public class Supervisor : MonoBehaviour, FluxComponent {
 				}					
 			}
 		}
+	}
+	public void OnRestartButtonClick() {
+		SceneManager.LoadScene("Main");
+	}
+	public void OnTweetButtonClick() {
+		var text = WWW.EscapeURL(string.Format("Fly! High! フランで{0}飛びました！", makeScoreText(_score)));
+		var hash = WWW.EscapeURL("ふらフラ");
+		var url = string.Format("https://twitter.com/intent/tweet?text={0}&hashtags={1}", text, hash);		
+		Application.OpenURL(url);		
 	}
 }
 }
