@@ -12,9 +12,11 @@ public class Supervisor : MonoBehaviour, FluxComponent {
 	public Text resultText;
 	public Text levelText;
 	public Text debugText;
+	public Text highScoreText;
 	public AudioSource seStart;	
 	public AudioSource bgm;
 	private bool _isDebug;
+	private static readonly string PREF_HIGH_SCORE_KEY = "PLAYER_HIGH_SCORE";
 	public bool IsDebug {
 		get { return _isDebug; }
 	}
@@ -49,6 +51,7 @@ public class Supervisor : MonoBehaviour, FluxComponent {
 	// Use this for initialization
 	void Start () {
 		updateScore(_elapsedTime = 0);
+		updateHighScore();
 		goToStart();
 	}
 	
@@ -104,6 +107,10 @@ public class Supervisor : MonoBehaviour, FluxComponent {
 		_score =  Mathf.Round(etime*10f)/10f;		
 		scoreText.text = makeScoreText(_score);		
 	}
+	private void updateHighScore() {
+		var hs = PlayerPrefs.GetFloat(PREF_HIGH_SCORE_KEY,0f);
+		highScoreText.text = "HIGH SCORE: " + makeScoreText(hs);
+	}
 	private void initScene(GameState state) {
 		_elapsedTime = 0;		
 		foreach (var u in startUIs) {
@@ -131,6 +138,9 @@ public class Supervisor : MonoBehaviour, FluxComponent {
 				case GameState.Result: {
 					bgm.Stop();
 					resultText.text = makeScoreText(_score);
+					// ハイスコア更新
+					var hs = PlayerPrefs.GetFloat(PREF_HIGH_SCORE_KEY, 0f);
+					PlayerPrefs.SetFloat(PREF_HIGH_SCORE_KEY, Mathf.Max(_score, hs));
 					break;
 				}					
 			}
