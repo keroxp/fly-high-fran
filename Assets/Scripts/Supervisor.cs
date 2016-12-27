@@ -51,8 +51,9 @@ public class Supervisor : MonoBehaviour, FluxComponent {
 	// Use this for initialization
 	void Start () {
 		updateScore(_elapsedTime = 0);
+		debugText.enabled = false;
 		updateHighScore();
-		goToStart();
+		goToStart();	
 	}
 	
 	// Update is called once per frame

@@ -11,7 +11,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: keroxp
-  productName: Fly! High! Fran!
+  productName: "\u3075\u3089\u30D5\u30E9"
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21176471, a: 1}
@@ -119,13 +119,13 @@ PlayerSettings:
     16:9: 0
     Others: 0
   bundleIdentifier: me.keroxp.app
-  bundleVersion: 1.0
+  bundleVersion: 1.0.0
   preloadedAssets: []
   metroInputSource: 0
   m_HolographicPauseOnTrackingLoss: 1
   xboxOneDisableKinectGpuReservation: 0
   protectGraphicsMemory: 0
-  AndroidBundleVersionCode: 1
+  AndroidBundleVersionCode: 3
   AndroidMinSdkVersion: 9
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -191,11 +191,11 @@ PlayerSettings:
   iOSBackgroundModes: 0
   iOSMetalForceHardShadows: 0
   appleDeveloperTeamID: 
-  AndroidTargetDevice: 0
+  AndroidTargetDevice: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: Data/KeyStore/keystore.keystore
+  AndroidKeyaliasName: googleplaykey-keroxp
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   androidEnableBanner: 1
